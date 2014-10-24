@@ -1,0 +1,428 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		03376C2F19FA893800331FDD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03376C2E19FA893800331FDD /* AppDelegate.swift */; };
+		03376C3119FA893800331FDD /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 03376C3019FA893800331FDD /* GameScene.sks */; };
+		03376C3319FA893800331FDD /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03376C3219FA893800331FDD /* GameScene.swift */; };
+		03376C3519FA893800331FDD /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03376C3419FA893800331FDD /* GameViewController.swift */; };
+		03376C3819FA893800331FDD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03376C3619FA893800331FDD /* Main.storyboard */; };
+		03376C3A19FA893800331FDD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03376C3919FA893800331FDD /* Images.xcassets */; };
+		03376C3D19FA893800331FDD /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03376C3B19FA893800331FDD /* LaunchScreen.xib */; };
+		03376C4919FA893800331FDD /* HexacolorsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03376C4819FA893800331FDD /* HexacolorsTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		03376C4319FA893800331FDD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 03376C2119FA893800331FDD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 03376C2819FA893800331FDD;
+			remoteInfo = Hexacolors;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		03376C2919FA893800331FDD /* Hexacolors.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hexacolors.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		03376C2D19FA893800331FDD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		03376C2E19FA893800331FDD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		03376C3019FA893800331FDD /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		03376C3219FA893800331FDD /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		03376C3419FA893800331FDD /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		03376C3719FA893800331FDD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		03376C3919FA893800331FDD /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		03376C3C19FA893800331FDD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		03376C4219FA893800331FDD /* HexacolorsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HexacolorsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		03376C4719FA893800331FDD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		03376C4819FA893800331FDD /* HexacolorsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexacolorsTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		03376C2619FA893800331FDD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		03376C3F19FA893800331FDD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		03376C2019FA893800331FDD = {
+			isa = PBXGroup;
+			children = (
+				03376C2B19FA893800331FDD /* Hexacolors */,
+				03376C4519FA893800331FDD /* HexacolorsTests */,
+				03376C2A19FA893800331FDD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		03376C2A19FA893800331FDD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				03376C2919FA893800331FDD /* Hexacolors.app */,
+				03376C4219FA893800331FDD /* HexacolorsTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		03376C2B19FA893800331FDD /* Hexacolors */ = {
+			isa = PBXGroup;
+			children = (
+				03376C2E19FA893800331FDD /* AppDelegate.swift */,
+				03376C3019FA893800331FDD /* GameScene.sks */,
+				03376C3219FA893800331FDD /* GameScene.swift */,
+				03376C3419FA893800331FDD /* GameViewController.swift */,
+				03376C3619FA893800331FDD /* Main.storyboard */,
+				03376C3919FA893800331FDD /* Images.xcassets */,
+				03376C3B19FA893800331FDD /* LaunchScreen.xib */,
+				03376C2C19FA893800331FDD /* Supporting Files */,
+			);
+			path = Hexacolors;
+			sourceTree = "<group>";
+		};
+		03376C2C19FA893800331FDD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				03376C2D19FA893800331FDD /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		03376C4519FA893800331FDD /* HexacolorsTests */ = {
+			isa = PBXGroup;
+			children = (
+				03376C4819FA893800331FDD /* HexacolorsTests.swift */,
+				03376C4619FA893800331FDD /* Supporting Files */,
+			);
+			path = HexacolorsTests;
+			sourceTree = "<group>";
+		};
+		03376C4619FA893800331FDD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				03376C4719FA893800331FDD /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		03376C2819FA893800331FDD /* Hexacolors */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 03376C4C19FA893800331FDD /* Build configuration list for PBXNativeTarget "Hexacolors" */;
+			buildPhases = (
+				03376C2519FA893800331FDD /* Sources */,
+				03376C2619FA893800331FDD /* Frameworks */,
+				03376C2719FA893800331FDD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Hexacolors;
+			productName = Hexacolors;
+			productReference = 03376C2919FA893800331FDD /* Hexacolors.app */;
+			productType = "com.apple.product-type.application";
+		};
+		03376C4119FA893800331FDD /* HexacolorsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 03376C4F19FA893800331FDD /* Build configuration list for PBXNativeTarget "HexacolorsTests" */;
+			buildPhases = (
+				03376C3E19FA893800331FDD /* Sources */,
+				03376C3F19FA893800331FDD /* Frameworks */,
+				03376C4019FA893800331FDD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				03376C4419FA893800331FDD /* PBXTargetDependency */,
+			);
+			name = HexacolorsTests;
+			productName = HexacolorsTests;
+			productReference = 03376C4219FA893800331FDD /* HexacolorsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		03376C2119FA893800331FDD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Joshua Liu";
+				TargetAttributes = {
+					03376C2819FA893800331FDD = {
+						CreatedOnToolsVersion = 6.1;
+					};
+					03376C4119FA893800331FDD = {
+						CreatedOnToolsVersion = 6.1;
+						TestTargetID = 03376C2819FA893800331FDD;
+					};
+				};
+			};
+			buildConfigurationList = 03376C2419FA893800331FDD /* Build configuration list for PBXProject "Hexacolors" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 03376C2019FA893800331FDD;
+			productRefGroup = 03376C2A19FA893800331FDD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				03376C2819FA893800331FDD /* Hexacolors */,
+				03376C4119FA893800331FDD /* HexacolorsTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		03376C2719FA893800331FDD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				03376C3D19FA893800331FDD /* LaunchScreen.xib in Resources */,
+				03376C3A19FA893800331FDD /* Images.xcassets in Resources */,
+				03376C3119FA893800331FDD /* GameScene.sks in Resources */,
+				03376C3819FA893800331FDD /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		03376C4019FA893800331FDD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		03376C2519FA893800331FDD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				03376C3319FA893800331FDD /* GameScene.swift in Sources */,
+				03376C3519FA893800331FDD /* GameViewController.swift in Sources */,
+				03376C2F19FA893800331FDD /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		03376C3E19FA893800331FDD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				03376C4919FA893800331FDD /* HexacolorsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		03376C4419FA893800331FDD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 03376C2819FA893800331FDD /* Hexacolors */;
+			targetProxy = 03376C4319FA893800331FDD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		03376C3619FA893800331FDD /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				03376C3719FA893800331FDD /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		03376C3B19FA893800331FDD /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				03376C3C19FA893800331FDD /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		03376C4A19FA893800331FDD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		03376C4B19FA893800331FDD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		03376C4D19FA893800331FDD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Hexacolors/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		03376C4E19FA893800331FDD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Hexacolors/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		03376C5019FA893800331FDD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = HexacolorsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Hexacolors.app/Hexacolors";
+			};
+			name = Debug;
+		};
+		03376C5119FA893800331FDD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = HexacolorsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Hexacolors.app/Hexacolors";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		03376C2419FA893800331FDD /* Build configuration list for PBXProject "Hexacolors" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				03376C4A19FA893800331FDD /* Debug */,
+				03376C4B19FA893800331FDD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		03376C4C19FA893800331FDD /* Build configuration list for PBXNativeTarget "Hexacolors" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				03376C4D19FA893800331FDD /* Debug */,
+				03376C4E19FA893800331FDD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		03376C4F19FA893800331FDD /* Build configuration list for PBXNativeTarget "HexacolorsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				03376C5019FA893800331FDD /* Debug */,
+				03376C5119FA893800331FDD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 03376C2119FA893800331FDD /* Project object */;
+}
