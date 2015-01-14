@@ -15,6 +15,8 @@
 		03376C3A19FA893800331FDD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03376C3919FA893800331FDD /* Images.xcassets */; };
 		03376C3D19FA893800331FDD /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03376C3B19FA893800331FDD /* LaunchScreen.xib */; };
 		03376C4919FA893800331FDD /* HexacolorsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03376C4819FA893800331FDD /* HexacolorsTests.swift */; };
+		03376C5319FA898100331FDD /* HexacolorsScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03376C5219FA898100331FDD /* HexacolorsScene.swift */; };
+		03376C5519FAB84100331FDD /* endScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03376C5419FAB84100331FDD /* endScene.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,8 @@
 		03376C4219FA893800331FDD /* HexacolorsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HexacolorsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		03376C4719FA893800331FDD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		03376C4819FA893800331FDD /* HexacolorsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexacolorsTests.swift; sourceTree = "<group>"; };
+		03376C5219FA898100331FDD /* HexacolorsScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HexacolorsScene.swift; sourceTree = "<group>"; };
+		03376C5419FAB84100331FDD /* endScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = endScene.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +88,8 @@
 				03376C2E19FA893800331FDD /* AppDelegate.swift */,
 				03376C3019FA893800331FDD /* GameScene.sks */,
 				03376C3219FA893800331FDD /* GameScene.swift */,
+				03376C5219FA898100331FDD /* HexacolorsScene.swift */,
+				03376C5419FAB84100331FDD /* endScene.swift */,
 				03376C3419FA893800331FDD /* GameViewController.swift */,
 				03376C3619FA893800331FDD /* Main.storyboard */,
 				03376C3919FA893800331FDD /* Images.xcassets */,
@@ -167,6 +173,7 @@
 				TargetAttributes = {
 					03376C2819FA893800331FDD = {
 						CreatedOnToolsVersion = 6.1;
+						DevelopmentTeam = K68L32QYS3;
 					};
 					03376C4119FA893800331FDD = {
 						CreatedOnToolsVersion = 6.1;
@@ -221,7 +228,9 @@
 			files = (
 				03376C3319FA893800331FDD /* GameScene.swift in Sources */,
 				03376C3519FA893800331FDD /* GameViewController.swift in Sources */,
+				03376C5319FA898100331FDD /* HexacolorsScene.swift in Sources */,
 				03376C2F19FA893800331FDD /* AppDelegate.swift in Sources */,
+				03376C5519FAB84100331FDD /* endScene.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,9 +353,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Hexacolors/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -354,9 +366,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Hexacolors/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -413,6 +428,7 @@
 				03376C4E19FA893800331FDD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		03376C4F19FA893800331FDD /* Build configuration list for PBXNativeTarget "HexacolorsTests" */ = {
 			isa = XCConfigurationList;
@@ -421,6 +437,7 @@
 				03376C5119FA893800331FDD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
