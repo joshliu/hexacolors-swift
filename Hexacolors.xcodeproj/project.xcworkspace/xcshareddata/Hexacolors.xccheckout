@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>60BB7094-AFC7-46D8-AE90-5765C027753D</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Hexacolors</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>C12B93E589D48CA5815F692BC19D4BDBA5083C45</key>
+		<string>https://github.com/joshliu/hexacolors-swft.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Hexacolors.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>C12B93E589D48CA5815F692BC19D4BDBA5083C45</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/joshliu/hexacolors-swft.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>C12B93E589D48CA5815F692BC19D4BDBA5083C45</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>C12B93E589D48CA5815F692BC19D4BDBA5083C45</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Hexacolors</string>
+		</dict>
+	</array>
+</dict>
+</plist>

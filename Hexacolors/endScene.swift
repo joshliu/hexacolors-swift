@@ -10,6 +10,7 @@ import SpriteKit
 
 class endScene: SKScene {
     
+    var mode = ""
     var score = 0
     var time = Float()
     var scoreFloat = Float()
@@ -18,10 +19,19 @@ class endScene: SKScene {
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
         
-        if (score >= highscore) {
-            highscore = score
-            NSUserDefaults.standardUserDefaults().setObject(highscore, forKey: "hexacolorhs")
-            NSUserDefaults.standardUserDefaults().synchronize()
+        if (mode == "Infinite") {
+            highscore = NSUserDefaults.standardUserDefaults().integerForKey("infinitehs")
+            if (score >= highscore) {
+                highscore = score
+                NSUserDefaults.standardUserDefaults().setObject(highscore, forKey: "infinitehs")
+                NSUserDefaults.standardUserDefaults().synchronize()
+            }
+        } else {
+            if (score >= highscore) {
+                highscore = score
+                NSUserDefaults.standardUserDefaults().setObject(highscore, forKey: "hexacolorhs")
+                NSUserDefaults.standardUserDefaults().synchronize()
+            }
         }
         
         scoreFloat = Float(score)/time
