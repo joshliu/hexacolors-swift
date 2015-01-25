@@ -14,13 +14,14 @@ class GameScene: SKScene {
     var mode = NSUserDefaults.standardUserDefaults().stringForKey("hexacolorsmode")
     var infiniteLabel = SKLabelNode()
     var secondLabel = SKLabelNode()
+    var reverseLabel = SKLabelNode()
     
     override func   didMoveToView(view: SKView) {
         /* Setup your scene here */
         
         var randomNum = Int(arc4random_uniform(5))
         
-        if (mode != "Infinite" && mode != "10 Seconds") {
+        if (mode != "Infinite" && mode != "10 Seconds" && mode != "Reverse") {
             mode = "Infinite"
             NSUserDefaults.standardUserDefaults().setObject("Infinite", forKey: "hexacolorsmode")
             NSUserDefaults.standardUserDefaults().synchronize()
@@ -42,9 +43,15 @@ class GameScene: SKScene {
         if (mode == "Infinite") {
             infiniteLabel.alpha = 1
             secondLabel.alpha = 0
+            reverseLabel.alpha = 0
+        } else if (mode == "Reverse") {
+            reverseLabel.alpha = 1
+            infiniteLabel.alpha = 0
+            secondLabel.alpha = 0
         } else {
             infiniteLabel.alpha = 0
             secondLabel.alpha = 1
+            reverseLabel.alpha = 0
         }
         infiniteLabel.text = "Infinite"
         infiniteLabel.fontColor = labelColorArray[randomNum]
@@ -61,6 +68,14 @@ class GameScene: SKScene {
         secondLabel.position = CGPoint(x: CGRectGetMinX(self.frame)+410, y: CGRectGetMinY(self.frame)+15)
         
         self.addChild(secondLabel)
+        
+        reverseLabel.text = "Reverse"
+        reverseLabel.fontColor = labelColorArray[randomNum]
+        reverseLabel.fontSize = 40
+        reverseLabel.name = "mode"
+        reverseLabel.position = CGPoint(x: CGRectGetMinX(self.frame)+370, y: CGRectGetMinY(self.frame)+15)
+        
+        self.addChild(reverseLabel)
         
         let playLabel = SKLabelNode()
         playLabel.text = "Play";
@@ -100,6 +115,12 @@ class GameScene: SKScene {
                     scene.scaleMode = SKSceneScaleMode.AspectFill
                     
                     self.scene?.view?.presentScene(scene, transition: transition)
+                } else if (mode == "Reverse") {
+                    let scene = ReverseScene()
+                    scene.size = self.size
+                    scene.scaleMode = SKSceneScaleMode.AspectFill
+                    
+                    self.scene?.view?.presentScene(scene, transition: transition)
                 } else {
                     let scene = HexacolorsScene()
                     scene.size = self.size
@@ -118,15 +139,22 @@ class GameScene: SKScene {
                     NSUserDefaults.standardUserDefaults().synchronize()
                     infiniteLabel.runAction(SKAction.fadeOutWithDuration(0.5))
                     secondLabel.runAction(SKAction.sequence([smallWait,SKAction.fadeInWithDuration(0.5)]))
+                } else if (mode == "10 Seconds") {
+                    mode = "Reverse"
+                    NSUserDefaults.standardUserDefaults().setObject("Reverse", forKey: "hexacolorsmode")
+                    NSUserDefaults.standardUserDefaults().synchronize()
+                    secondLabel.runAction(SKAction.fadeOutWithDuration(0.5))
+                    reverseLabel.runAction(SKAction.sequence([smallWait,SKAction.fadeInWithDuration(0.5)]))
                 } else {
                     mode = "Infinite"
                     NSUserDefaults.standardUserDefaults().setObject("Infinite", forKey: "hexacolorsmode")
                     NSUserDefaults.standardUserDefaults().synchronize()
-                    secondLabel.runAction(SKAction.fadeOutWithDuration(0.5))
+                    reverseLabel.runAction(SKAction.fadeOutWithDuration(0.5))
                     infiniteLabel.runAction(SKAction.sequence([smallWait,SKAction.fadeInWithDuration(0.5)]))
                 }
-            } else {
                 
+            } else {
+                //lol
             }
         }
     }

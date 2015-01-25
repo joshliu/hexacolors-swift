@@ -26,6 +26,13 @@ class endScene: SKScene {
                 NSUserDefaults.standardUserDefaults().setObject(highscore, forKey: "infinitehs")
                 NSUserDefaults.standardUserDefaults().synchronize()
             }
+        } else if (mode == "Reverse") {
+            highscore = NSUserDefaults.standardUserDefaults().integerForKey("reversehs")
+            if (score >= highscore) {
+                highscore = score
+                NSUserDefaults.standardUserDefaults().setObject(highscore, forKey: "reversehs")
+                NSUserDefaults.standardUserDefaults().synchronize()
+            }
         } else {
             if (score >= highscore) {
                 highscore = score
