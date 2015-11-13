@@ -42,7 +42,7 @@ class endScene: SKScene {
         }
         
         scoreFloat = Float(score)/time
-        var tps = NSString(format: "%.2f", scoreFloat)
+        let tps = NSString(format: "%.2f", scoreFloat)
         
         self.backgroundColor = SKColor.whiteColor()
         
@@ -96,10 +96,7 @@ class endScene: SKScene {
         self.addChild(scoreLabel)
         self.addChild(tpsLabel)
     }
-    
-    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
-        /* Called when a touch begins */
-        
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         for touch: AnyObject in touches {
             let transition = SKTransition.revealWithDirection(SKTransitionDirection.Right, duration: 0.2)
             let scene = GameScene()

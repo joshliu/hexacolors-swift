@@ -32,9 +32,12 @@ class HexacolorsScene: SKScene {
     var instructions = SKLabelNode()
     var instructions2 = SKLabelNode()
     var randomColor = ""
+    var center = CGPoint()
     
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */ 
+        
+        center = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame))
         
         self.backgroundColor = SKColor.whiteColor()
         self.name = "background"
@@ -76,6 +79,7 @@ class HexacolorsScene: SKScene {
         CGPathAddLineToPoint(redLine, nil, 258, 187.5)
         CGPathAddLineToPoint(redLine, nil, 150, 250)
         redNode.path = redLine
+        redNode.physicsBody = SKPhysicsBody(polygonFromPath: redNode.path!)
         redNode.strokeColor = colorRed
         redNode.fillColor = colorRed
         redNode.position = position
@@ -89,6 +93,8 @@ class HexacolorsScene: SKScene {
         CGPathAddLineToPoint(greenLine, nil, 150, 125)
         CGPathAddLineToPoint(greenLine, nil, 150, 0)
         greenNode.path = greenLine
+        greenNode.physicsBody?.affectedByGravity = true
+        greenNode.physicsBody = SKPhysicsBody(polygonFromPath: greenNode.path!)
         greenNode.strokeColor = colorGreen
         greenNode.fillColor = colorGreen
         greenNode.position = position
@@ -102,6 +108,7 @@ class HexacolorsScene: SKScene {
         CGPathAddLineToPoint(blueLine, nil, 150, 125)
         CGPathAddLineToPoint(blueLine, nil, 258,62.5)
         blueNode.path = blueLine
+        blueNode.physicsBody = SKPhysicsBody(polygonFromPath: blueNode.path!)
         blueNode.strokeColor = colorBlue
         blueNode.fillColor = colorBlue
         blueNode.position = position
@@ -115,6 +122,7 @@ class HexacolorsScene: SKScene {
         CGPathAddLineToPoint(purpleLine, nil, 150, 125)
         CGPathAddLineToPoint(purpleLine, nil, 258,187.5)
         purpleNode.path = purpleLine
+        purpleNode.physicsBody = SKPhysicsBody(polygonFromPath: purpleNode.path!)
         purpleNode.strokeColor = colorPurple
         purpleNode.fillColor = colorPurple
         purpleNode.position = position
@@ -128,6 +136,7 @@ class HexacolorsScene: SKScene {
         CGPathAddLineToPoint(yellowLine, nil, 150, 125)
         CGPathAddLineToPoint(yellowLine, nil, 42,62.5)
         yellowNode.path = yellowLine
+        yellowNode.physicsBody = SKPhysicsBody(polygonFromPath: yellowNode.path!)
         yellowNode.strokeColor = colorYellow
         yellowNode.fillColor = colorYellow
         yellowNode.position = position
@@ -141,26 +150,27 @@ class HexacolorsScene: SKScene {
         CGPathAddLineToPoint(orangeLine, nil, 150, 125)
         CGPathAddLineToPoint(orangeLine, nil, 150,250)
         orangeNode.path = orangeLine
+        orangeNode.physicsBody = SKPhysicsBody(polygonFromPath: orangeNode.path!)
         orangeNode.strokeColor = colorOrange
         orangeNode.fillColor = colorOrange
         orangeNode.position = position
         
         self.addChild(orangeNode)
         
-        var run1 = SKAction.runBlock({
+        let run1 = SKAction.runBlock({
             self.instructions.runAction(SKAction.fadeInWithDuration(0.5))
             self.instructions2.runAction(SKAction.fadeInWithDuration(0.5))
         })
-        var run2 = SKAction.runBlock({
+        let run2 = SKAction.runBlock({
             self.instructions.runAction(SKAction.fadeOutWithDuration(0.5))
             self.instructions2.runAction(SKAction.fadeOutWithDuration(0.5))
         })
-        var wait1 = SKAction.waitForDuration(0.5)
-        var run3 = SKAction.runBlock({
+        let wait1 = SKAction.waitForDuration(0.5)
+        let run3 = SKAction.runBlock({
             self.timerLabel.runAction(SKAction.fadeInWithDuration(0.5))
         })
-        var wait2 = SKAction.waitForDuration(0.3)
-        var run4 = SKAction.runBlock({
+        let wait2 = SKAction.waitForDuration(0.3)
+        let run4 = SKAction.runBlock({
             self.colorLabel.runAction(SKAction.fadeInWithDuration(0.3))
             self.startGame()
             self.updateHundreths()
@@ -170,19 +180,46 @@ class HexacolorsScene: SKScene {
         
     }
     
-    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
-        /* Called when a touch begins */
-        
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         for touch: AnyObject in touches {
             
             //determine touched node
             let location = touch.locationInNode(self)
             let touchedNode = self.nodeAtPoint(location)
+            var selectedColor = String()
             
+            let angle = atan((location.y-center.y)/(location.x-center.x))
+            
+            if (location.x - center.y < 0) {
+                //2nd and 3rd quadrants
+                if Double(angle) >= M_PI/6 {
+                    selectedColor = "orange"
+                } else if Double(angle) <= -1*M_PI/6 {
+                    selectedColor = "green"
+                } else {
+                    selectedColor = "yellow"
+                }
+            } else {
+                //1st and 4th quadrants
+                if Double(angle) >= M_PI/6 {
+                    selectedColor = "red"
+                } else if Double(angle) <= -1*M_PI/6 {
+                    selectedColor = "blue"
+                } else {
+                    selectedColor = "purple"
+                }
+            }
+            
+            
+            
+            
+            print("tapped:\(selectedColor)")
+            print(randomColor)
             if (touchedNode.name == randomColor) {
                 score += 1
+
                 updateColorLabel()
-            } else if (touchedNode.name == "background") {
+            } else if (selectedColor == "background") {
                 //do nothing
             } else if gamebool == false {
                 //do nothing
@@ -194,8 +231,8 @@ class HexacolorsScene: SKScene {
     
     func startGame() {
         gamebool = true
-        var timerWait = SKAction.waitForDuration(0.1)
-        var timerRun = SKAction.runBlock({
+        let timerWait = SKAction.waitForDuration(0.1)
+        let timerRun = SKAction.runBlock({
             self.time -= 0.1
             self.timestring = NSString(format: "%.1f", self.time)
             self.timerLabel.text = "\(self.timestring)\(self.hundrethsString) seconds"
@@ -207,8 +244,8 @@ class HexacolorsScene: SKScene {
     }
     
     func updateHundreths() {
-        var timerWait = SKAction.waitForDuration(0.01)
-        var timerRun = SKAction.runBlock({
+        let timerWait = SKAction.waitForDuration(0.01)
+        let timerRun = SKAction.runBlock({
             self.hundreths += 1
             self.hundrethsString = String(self.hundreths)
             
@@ -223,7 +260,7 @@ class HexacolorsScene: SKScene {
     
     func updateColorLabel() {
         var randomNum = Int(arc4random_uniform(6))
-        var randomNum2 = Int(arc4random_uniform(5))
+        let randomNum2 = Int(arc4random_uniform(5))
         
         // makes sure that the same color does not appear consecutively
         if randomColor == colorArray[randomNum] {

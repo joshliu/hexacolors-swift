@@ -34,9 +34,12 @@ class InifiniteScene: SKScene {
     var instructions2 = SKLabelNode()
     var randomColor = ""
     var addLabel = SKLabelNode()
+    var center = CGPoint()
     
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
+        
+        center = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame))
         
         self.backgroundColor = SKColor.whiteColor()
         self.name = "background"
@@ -157,20 +160,20 @@ class InifiniteScene: SKScene {
         
         self.addChild(orangeNode)
         
-        var run1 = SKAction.runBlock({
+        let run1 = SKAction.runBlock({
             self.instructions.runAction(SKAction.fadeInWithDuration(0.5))
             self.instructions2.runAction(SKAction.fadeInWithDuration(0.5))
         })
-        var run2 = SKAction.runBlock({
+        let run2 = SKAction.runBlock({
             self.instructions.runAction(SKAction.fadeOutWithDuration(0.5))
             self.instructions2.runAction(SKAction.fadeOutWithDuration(0.5))
         })
-        var wait1 = SKAction.waitForDuration(0.5)
-        var run3 = SKAction.runBlock({
+        let wait1 = SKAction.waitForDuration(0.5)
+        let run3 = SKAction.runBlock({
             self.timerLabel.runAction(SKAction.fadeInWithDuration(0.5))
         })
-        var wait2 = SKAction.waitForDuration(0.3)
-        var run4 = SKAction.runBlock({
+        let wait2 = SKAction.waitForDuration(0.3)
+        let run4 = SKAction.runBlock({
             self.colorLabel.runAction(SKAction.fadeInWithDuration(0.3))
             self.startGame()
             self.updateHundreths()
@@ -180,16 +183,42 @@ class InifiniteScene: SKScene {
         
     }
     
-    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
-        /* Called when a touch begins */
-        
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         for touch: AnyObject in touches {
             
             //determine touched node
             let location = touch.locationInNode(self)
             let touchedNode = self.nodeAtPoint(location)
             
-            if (touchedNode.name == randomColor) {
+            var selectedColor = String()
+            
+            let angle = atan((location.y-center.y)/(location.x-center.x))
+            
+            if (location.x - center.x < 0) {
+                //2nd and 3rd quadrants
+                if Double(angle) >= M_PI/6 {
+                    selectedColor = "green"
+                } else if Double(angle) <= -1*M_PI/6 {
+                    selectedColor = "orange"
+                } else {
+                    selectedColor = "yellow"
+                }
+            } else {
+                //1st and 4th quadrants
+                if Double(angle) >= M_PI/6 {
+                    selectedColor = "red"
+                } else if Double(angle) <= -1*M_PI/6 {
+                    selectedColor = "blue"
+                } else {
+                    selectedColor = "purple"
+                }
+            }
+            
+            print(selectedColor)
+
+            
+            if (selectedColor == randomColor) {
                 score += 1
                 time += 0.5
                 addLabel.alpha = 1
@@ -207,8 +236,8 @@ class InifiniteScene: SKScene {
     
     func startGame() {
         gamebool = true
-        var timerWait = SKAction.waitForDuration(0.1)
-        var timerRun = SKAction.runBlock({
+        let timerWait = SKAction.waitForDuration(0.1)
+        let timerRun = SKAction.runBlock({
             self.time -= 0.1
             self.totaltime += 0.1
             self.timestring = NSString(format: "%.1f", self.time)
@@ -221,8 +250,8 @@ class InifiniteScene: SKScene {
     }
     
     func updateHundreths() {
-        var timerWait = SKAction.waitForDuration(0.01)
-        var timerRun = SKAction.runBlock({
+        let timerWait = SKAction.waitForDuration(0.01)
+        let timerRun = SKAction.runBlock({
             self.hundreths += 1
             self.hundrethsString = String(self.hundreths)
             
@@ -237,7 +266,7 @@ class InifiniteScene: SKScene {
     
     func updateColorLabel() {
         var randomNum = Int(arc4random_uniform(6))
-        var randomNum2 = Int(arc4random_uniform(5))
+        let randomNum2 = Int(arc4random_uniform(5))
         
         // makes sure that the same color does not appear consecutively
         if randomColor == colorArray[randomNum] {

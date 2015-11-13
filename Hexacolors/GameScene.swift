@@ -19,7 +19,7 @@ class GameScene: SKScene {
     override func   didMoveToView(view: SKView) {
         /* Setup your scene here */
         
-        var randomNum = Int(arc4random_uniform(5))
+        let randomNum = Int(arc4random_uniform(5))
         
         if (mode != "Infinite" && mode != "10 Seconds" && mode != "Reverse") {
             mode = "Infinite"
@@ -31,7 +31,7 @@ class GameScene: SKScene {
         
         self.backgroundColor = SKColor.whiteColor()
         
-        var hexacolorsLabel = SKLabelNode()
+        let hexacolorsLabel = SKLabelNode()
         hexacolorsLabel.text = "Hexacolors"
         hexacolorsLabel.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMaxY(self.frame)-150);
         hexacolorsLabel.fontColor = SKColor.darkTextColor()
@@ -87,20 +87,18 @@ class GameScene: SKScene {
         
         self.addChild(playLabel)
         
-        var fadein = SKAction.runBlock({
+        let fadein = SKAction.runBlock({
             hexacolorsLabel.runAction(SKAction.fadeInWithDuration(1.5))
         })
-        var fadeout = SKAction.runBlock({
+        let fadeout = SKAction.runBlock({
             hexacolorsLabel.runAction(SKAction.fadeOutWithDuration(1.5))
         })
-        var wait = SKAction.waitForDuration(2)
+        let wait = SKAction.waitForDuration(2)
         
         self.runAction(SKAction.repeatActionForever(SKAction.sequence([wait,fadeout,wait,fadein])))
     }
     
-    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
-        /* Called when a touch begins */
-        
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) { 
         for touch: AnyObject in touches {
             let location = touch.locationInNode(self)
             let touchedNode = nodeAtPoint(location)
