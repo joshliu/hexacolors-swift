@@ -37,7 +37,7 @@ class HexacolorsScene: SKScene {
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */ 
         
-        center = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame))
+        center = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame)-24)
         
         self.backgroundColor = SKColor.whiteColor()
         self.name = "background"
@@ -190,12 +190,14 @@ class HexacolorsScene: SKScene {
             
             let angle = atan((location.y-center.y)/(location.x-center.x))
             
-            if (location.x - center.y < 0) {
+            
+            
+            if (location.x - center.x < 0) {
                 //2nd and 3rd quadrants
                 if Double(angle) >= M_PI/6 {
-                    selectedColor = "orange"
-                } else if Double(angle) <= -1*M_PI/6 {
                     selectedColor = "green"
+                } else if Double(angle) <= -1*M_PI/6 {
+                    selectedColor = "orange"
                 } else {
                     selectedColor = "yellow"
                 }
@@ -215,12 +217,12 @@ class HexacolorsScene: SKScene {
             
             print("tapped:\(selectedColor)")
             print(randomColor)
-            if (touchedNode.name == randomColor) {
-                score += 1
-
-                updateColorLabel()
-            } else if (selectedColor == "background") {
+            if (selectedColor == "background") {
+                
+            } else if (touchedNode.name == randomColor) {
                 //do nothing
+                score += 1
+                updateColorLabel()
             } else if gamebool == false {
                 //do nothing
             } else {

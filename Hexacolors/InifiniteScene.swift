@@ -39,7 +39,7 @@ class InifiniteScene: SKScene {
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
         
-        center = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame))
+        center = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame)-24)
         
         self.backgroundColor = SKColor.whiteColor()
         self.name = "background"
@@ -214,18 +214,16 @@ class InifiniteScene: SKScene {
                     selectedColor = "purple"
                 }
             }
-            
-            print(selectedColor)
 
             
-            if (selectedColor == randomColor) {
+            if (touchedNode.name == "background") {
+                return
+            } else if (selectedColor == randomColor) {
                 score += 1
                 time += 0.5
                 addLabel.alpha = 1
                 addLabel.runAction(SKAction.fadeOutWithDuration(0.5))
                 updateColorLabel()
-            } else if (touchedNode.name == "background") {
-                //do nothing
             } else if gamebool == false {
                 //do nothing
             } else {

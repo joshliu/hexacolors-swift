@@ -38,7 +38,7 @@ class ReverseScene: SKScene {
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
         
-        center = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame))
+        center = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame)-24)
         
         self.backgroundColor = SKColor.whiteColor()
         self.name = "background"
@@ -191,12 +191,15 @@ class ReverseScene: SKScene {
             
             let angle = atan((location.y-center.y)/(location.x-center.x))
             
-            if (location.x - center.y < 0) {
+            print(location)
+            print(center)
+            
+            if (location.x - center.x < 0) {
                 //2nd and 3rd quadrants
                 if Double(angle) >= M_PI/6 {
-                    selectedColor = "orange"
-                } else if Double(angle) <= -1*M_PI/6 {
                     selectedColor = "green"
+                } else if Double(angle) <= -1*M_PI/6 {
+                    selectedColor = "orange"
                 } else {
                     selectedColor = "yellow"
                 }
@@ -213,14 +216,14 @@ class ReverseScene: SKScene {
             
             print(selectedColor)
             print(colorArray[correctColor])
-            if (selectedColor == colorArray[correctColor]) {
+            if (touchedNode.name == "background") {
+                
+            } else if (selectedColor == colorArray[correctColor]) {
                 score += 1
                 time += 0.5
                 addLabel.alpha = 1
                 addLabel.runAction(SKAction.fadeOutWithDuration(0.5))
                 updateColorLabel()
-            } else if (touchedNode.name == "background") {
-                //do nothing
             } else if gamebool == false {
                 //do nothing
             } else {
